@@ -1,16 +1,21 @@
 import React from 'react'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import MainTemplate from 'templates/MainTemplate/MainTemplate'
+import HeroTemplate from 'templates/HeroTemplate/HeroTemplate'
+import PortfolioTemplate from 'templates/PortfolioTemplate/PortfolioTemplate'
 
-const StyledHeading = styled.h1`
-  font-weight: ${({ theme }) => theme.font.size.h1};
-  font-family: ${({ theme }) => theme.font.family.poppins};
-  color: ${({ theme }) => theme.brand};
-`
+// const StyledHeading = styled.h1`
+//   font-size: 40px;
+//   color: black;
+//   color: ${({ theme }) => theme.darkGray};
+//   font-family: 'Poppins SemiBold', sans-serif;
+//   transition: color 0.5s ease-in-out;
+// `
 
 const IndexPage = () => (
   <MainTemplate>
-    <StyledHeading>Gatsby Karolus Starter</StyledHeading>
+    <HeroTemplate />
+    <PortfolioTemplate />
   </MainTemplate>
 )
 

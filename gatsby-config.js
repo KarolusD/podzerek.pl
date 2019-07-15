@@ -2,13 +2,38 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Karolus Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@KarolusD`,
+    title: `Portfolio - Karol Podżerek - Official Website`,
+    description: `Are you looking for a good frontend or UI designer? You've come to the right place. Let's get to know each other`,
+    keywords: `frontend, ui, designer, portfolio, kraków`,
+    author: `Karol Podżerek`,
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-root-import',
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+        ignore: [`**/.*`],
+      },
+    },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 750,
+              linkImagesToOrginal: false,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-root-import`,
       options: {
         assets: path.join(__dirname, 'src/assets'),
         components: path.join(__dirname, 'src/components'),
@@ -40,15 +65,7 @@ module.exports = {
       options: { files: ['**/*.{js,jsx}'] },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
-    },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -58,7 +75,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/;.svg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

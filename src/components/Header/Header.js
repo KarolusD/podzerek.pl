@@ -1,0 +1,62 @@
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import Logo from 'components/Logo/Logo'
+import Hamburger from 'components/Hamburger/Hamburger'
+import Switch from 'components/Switch/Switch'
+import PropTypes from 'prop-types'
+import MobileMenu from 'components/MobileMenu/MobileMenu'
+import Menu from 'components/Menu/Menu'
+
+const StyledWrapper = styled.nav`
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: ${({ theme }) => theme.bg};
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 28px 16px 0 45px;
+  z-index: 1000;
+  transition: ${({ theme }) => theme.themeTransition};
+
+  ${({ theme }) => theme.mq.tablet} {
+    padding: 28px 80px 0 80px;
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    padding: 28px 164px 0 164px;
+  }
+`
+
+const Header = ({ setTheme, setIsLight, isLight }) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setIsOpen(!isOpen)
+  }
+
+  return (
+    <StyledWrapper>
+      <Switch
+        setTheme={setTheme}
+        setIsLight={setIsLight}
+        isLight={isLight}
+        isOpen={isOpen}
+      />
+      <Logo />
+      <Hamburger isOpen={isOpen} onClick={toggleMobileMenu} />
+      <MobileMenu isOpen={isOpen} />
+      <Menu />
+    </StyledWrapper>
+  )
+}
+
+Header.propTypes = {
+  setTheme: PropTypes.func.isRequired,
+  setIsLight: PropTypes.func.isRequired,
+  isLight: PropTypes.bool.isRequired,
+}
+
+export default Header
