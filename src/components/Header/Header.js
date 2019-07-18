@@ -7,6 +7,8 @@ import PropTypes from 'prop-types'
 import MobileMenu from 'components/MobileMenu/MobileMenu'
 import Menu from 'components/Menu/Menu'
 
+const scrollToElement = require('scroll-to-element')
+
 const StyledWrapper = styled.nav`
   position: fixed;
   display: flex;
@@ -37,8 +39,22 @@ const Header = ({ setTheme, setIsLight, isLight }) => {
     setIsOpen(!isOpen)
   }
 
+  const handleLinkClick = (e, target) => {
+    if (typeof window !== 'undefined') {
+      if (window.location.pathname === '/') {
+        e.preventDefault()
+        scrollToElement(target, {
+          offset: -80,
+          ease: 'outCube',
+          duration: 1000,
+        })
+      }
+      setIsOpen(false)
+    }
+  }
+
   return (
-    <StyledWrapper>
+    <StyledWrapper id="nav">
       <Switch
         setTheme={setTheme}
         setIsLight={setIsLight}
@@ -47,8 +63,8 @@ const Header = ({ setTheme, setIsLight, isLight }) => {
       />
       <Logo />
       <Hamburger isOpen={isOpen} onClick={toggleMobileMenu} />
-      <MobileMenu isOpen={isOpen} />
-      <Menu />
+      <MobileMenu isOpen={isOpen} handleLinkClick={handleLinkClick} />
+      <Menu handleLinkClick={handleLinkClick} />
     </StyledWrapper>
   )
 }

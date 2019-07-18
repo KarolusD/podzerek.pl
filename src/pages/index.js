@@ -3,6 +3,7 @@ import React from 'react'
 import MainTemplate from 'templates/MainTemplate/MainTemplate'
 import HeroTemplate from 'templates/HeroTemplate/HeroTemplate'
 import PortfolioTemplate from 'templates/PortfolioTemplate/PortfolioTemplate'
+import ContactTemplate from '../templates/ContactTemplate/ContactTemplate'
 
 // const StyledHeading = styled.h1`
 //   font-size: 40px;
@@ -16,6 +17,7 @@ const IndexPage = () => (
   <MainTemplate>
     <HeroTemplate />
     <PortfolioTemplate />
+    <ContactTemplate />
   </MainTemplate>
 )
 

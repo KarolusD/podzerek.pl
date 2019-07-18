@@ -8,6 +8,8 @@ import Circle from 'components/Circle/Circle'
 import Icon from 'components/Icon/Icon'
 import semicolon from 'assets/images/;.svg'
 
+const scrollToElement = require('scroll-to-element')
+
 const HeroSection = styled(Section)`
   padding: 31.25vh 0 0 12.5vw;
 
@@ -176,8 +178,21 @@ const StyledSemicolon = styled(Icon)`
   }
 `
 
+const handleLinkClick = (e, target) => {
+  if (typeof window !== 'undefined') {
+    if (window.location.pathname === '/') {
+      e.preventDefault()
+      scrollToElement(target, {
+        offset: -80,
+        ease: 'outCube',
+        duration: 1000,
+      })
+    }
+  }
+}
+
 const HeroTemplate = ({ isLight }) => (
-  <HeroSection>
+  <HeroSection id="home">
     <StyledBigCircle isLight={isLight} top="42%" left="-255px" radius={210} />
     <StyledBigDarkCircle
       isLight={isLight}
@@ -190,7 +205,14 @@ const HeroTemplate = ({ isLight }) => (
       Frontend developer<StyledSemicolon src={semicolon}>;</StyledSemicolon>{' '}
       <br />& UI Designer
     </HeroH1>
-    <CTA to="/">see my work</CTA>
+    <CTA
+      onClick={e => {
+        handleLinkClick(e, '#portfolio')
+      }}
+      to="/#portfolio"
+    >
+      see my work
+    </CTA>
   </HeroSection>
 )
 

@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
+import Scrollspy from 'react-scrollspy'
 
-const StyledMobileMenu = styled.ul`
+const StyledMobileMenu = styled(Scrollspy)`
   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
   position: absolute;
   display: flex;
@@ -35,10 +36,14 @@ const MobileMenuItem = styled.li`
   transform: ${({ isOpen }) =>
     isOpen ? 'translateX(-50px)' : 'translateX(0)'};
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-  transition: ${({ delay }) =>
-    `opacity 200ms ${delay}ms ease-out, transform 200ms ${delay}ms cubic-bezier(.51,.84,.32,1.19)`};
+  transition: ${({ delay, theme }) =>
+    `opacity 200ms ${delay}ms ease-out, transform 200ms ${delay}ms cubic-bezier(.51,.84,.32,1.19),
+    ${theme.themeTransition}`};
   margin: 8%;
   cursor: pointer;
+  ${({ theme }) => theme.mq.desktop} {
+    display: none;
+  }
 
   a {
     padding: 8px;
@@ -54,36 +59,97 @@ const MobileMenuItem = styled.li`
     ${({ theme }) => theme.mq.tablet} {
       font-size: ${({ theme }) => theme.font.size.desktop.h3};
     }
+    ${({ theme }) => theme.mq.desktop} {
+      display: none;
+    }
+    &.active {
+      :before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 2px);
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% + 4px);
+        height: 4px;
+        border-radius: 6px;
+        background: linear-gradient(
+          to right,
+          ${({ theme }) => theme.brandGradient}
+        );
+        z-index: -1;
+      }
+    }
+  }
+
+  &.active {
+    a {
+      :before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 2px);
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% + 4px);
+        height: 4px;
+        border-radius: 6px;
+        background: linear-gradient(
+          to right,
+          ${({ theme }) => theme.brandGradient}
+        );
+        z-index: -1;
+      }
+    }
   }
 `
 
-const MenuItems = ['Home', 'Portfolio', 'About me', 'Blog', 'Contact']
-
-const MobileMenu = ({ isOpen }) => {
+const MobileMenu = ({ isOpen, handleLinkClick }) => {
   return (
-    <StyledMobileMenu isOpen={isOpen}>
-      {MenuItems.map((item, index) => (
-        <MobileMenuItem
-          isOpen={isOpen}
-          delay={isOpen ? index * 80 + 300 : 100}
-          key={item}
+    <StyledMobileMenu
+      isOpen={isOpen}
+      items={['home', 'portfolio', 'aboutme', 'blog', 'contact']}
+      currentClassName="active"
+      offset={-300}
+    >
+      <MobileMenuItem isOpen={isOpen} delay={isOpen ? 300 : 100}>
+        <Link
+          to="#home"
+          onClick={e => handleLinkClick(e, '#home')}
+          activeClassName="active"
         >
-          <Link
-            to={item
-              .split(' ')
-              .join('')
-              .toLowerCase()}
-          >
-            {item}
-          </Link>
-        </MobileMenuItem>
-      ))}
+          Home
+        </Link>
+      </MobileMenuItem>
+      <MobileMenuItem isOpen={isOpen} delay={isOpen ? 380 : 100}>
+        <Link to="#portfolio" onClick={e => handleLinkClick(e, '#portfolio')}>
+          Portfolio
+        </Link>
+      </MobileMenuItem>
+      <MobileMenuItem isOpen={isOpen} delay={isOpen ? 460 : 100}>
+        <Link to="#aboutme" onClick={e => handleLinkClick(e, '#aboutme')}>
+          About me
+        </Link>
+      </MobileMenuItem>
+      <MobileMenuItem isOpen={isOpen} delay={isOpen ? 540 : 100}>
+        <Link to="/blog" onClick={null} activeClassName="active">
+          Blog
+        </Link>
+      </MobileMenuItem>
+      <MobileMenuItem isOpen={isOpen} delay={isOpen ? 620 : 100}>
+        <Link to="#contact" onClick={e => handleLinkClick(e, '#contact')}>
+          Contact
+        </Link>
+      </MobileMenuItem>
     </StyledMobileMenu>
   )
 }
 
 MobileMenu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
+  handleLinkClick: PropTypes.func.isRequired,
 }
 
 export default MobileMenu

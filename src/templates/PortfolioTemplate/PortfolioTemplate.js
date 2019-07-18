@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import portfolioProjects from '../../portfolioProjects/portfolioProjects'
 
-const StyledSection = styled(Section)`
+const StyledSection = styled.div`
   min-height: auto;
 
   ${({ theme }) => theme.mq.desktop} {
@@ -64,7 +64,7 @@ const StyledImage = styled(Img)`
     display: block;
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     height: auto;
     max-height: 500px;
     object-fit: contain;
@@ -84,7 +84,7 @@ const StyledFlexItem = styled.div`
   width: 100%;
   ${({ theme }) => theme.mq.desktop} {
     width: 50%;
-    max-width: 500px;
+    max-width: 600px;
     height: auto;
     padding-right: 80px;
   }
@@ -138,7 +138,7 @@ const PortfolioTemplate = () => {
             relativePath
             name
             childImageSharp {
-              fluid(maxWidth: 750, quality: 90) {
+              fluid(maxWidth: 750, quality: 100) {
                 ...GatsbyImageSharpFluid_noBase64
               }
             }
@@ -188,7 +188,7 @@ const PortfolioTemplate = () => {
     </StyledSection>
   ))
 
-  return <>{portfolioPosts}</>
+  return <Section id="portfolio">{portfolioPosts}</Section>
 }
 
 export default PortfolioTemplate
