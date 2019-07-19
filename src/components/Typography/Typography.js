@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const H1 = styled.h1`
   position: relative;
-  font-family: ${({ theme }) => theme.font.family.poppins};
+  font-family: ${({ theme }) => theme.font.family.poppins}, sans-serif;
   font-weight: ${({ theme }) => theme.font.weight.extrabold};
   font-size: ${({ theme }) => theme.font.size.mobile.h1};
   color: ${({ theme }) => theme.text};
@@ -16,7 +16,7 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
   position: relative;
-  font-family: ${({ theme }) => theme.font.family.poppins};
+  font-family: ${({ theme }) => theme.font.family.poppins}, sans-serif;
   font-weight: ${({ theme }) => theme.font.weight.semibold};
   font-size: ${({ theme }) => theme.font.size.mobile.h2};
   color: ${({ theme }) => theme.darkGray};
@@ -28,7 +28,7 @@ const H2 = styled.h2`
 
 const H3 = styled.h3`
   position: relative;
-  font-family: ${({ theme }) => theme.font.family.poppins};
+  font-family: ${({ theme }) => theme.font.family.poppins}, sans-serif;
   font-weight: ${({ theme }) => theme.font.weight.extrabold};
   font-size: ${({ theme }) => theme.font.size.mobile.h3};
   color: ${({ theme }) => theme.text};
@@ -40,7 +40,7 @@ const H3 = styled.h3`
 
 const H4 = styled.h4`
   position: relative;
-  font-family: ${({ theme }) => theme.font.family.poppins};
+  font-family: ${({ theme }) => theme.font.family.poppins}, sans-serif;
   font-weight: ${({ theme }) => theme.font.weight.semibold};
   font-size: ${({ theme }) => theme.font.size.mobile.h4};
   color: ${({ theme }) => theme.text};
@@ -52,7 +52,7 @@ const H4 = styled.h4`
 
 const P = styled.p`
   position: relative;
-  font-family: ${({ theme }) => theme.font.family.poppins};
+  font-family: ${({ theme }) => theme.font.family.poppins}, sans-serif;
   font-weight: ${({ theme }) => theme.font.weight.regular};
   font-size: ${({ theme }) => theme.font.size.mobile.body};
   color: ${({ theme }) => theme.darkGray};

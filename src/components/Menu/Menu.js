@@ -58,7 +58,7 @@ const StyledMenuItem = styled.li`
           ${({ theme }) => theme.brandGradient}
         );
         z-index: -1;
-        animation: 200ms ${activeNavItemKeyframes} ease-out both;
+        animation: 300ms ${activeNavItemKeyframes} ease-out both;
       }
     }
   }
@@ -95,7 +95,7 @@ const Menu = ({ handleLinkClick }) => {
     >
       <StyledMenuItem>
         <Link
-          to="#home"
+          to="/#home"
           onClick={e => handleLinkClick(e, '#home')}
           activeClassName="active"
         >
@@ -103,12 +103,12 @@ const Menu = ({ handleLinkClick }) => {
         </Link>
       </StyledMenuItem>
       <StyledMenuItem>
-        <Link to="#portfolio" onClick={e => handleLinkClick(e, '#portfolio')}>
+        <Link to="/#portfolio" onClick={e => handleLinkClick(e, '#portfolio')}>
           Portfolio
         </Link>
       </StyledMenuItem>
       <StyledMenuItem>
-        <Link to="#aboutme" onClick={e => handleLinkClick(e, '#aboutme')}>
+        <Link to="/#aboutme" onClick={e => handleLinkClick(e, '#aboutme')}>
           About me
         </Link>
       </StyledMenuItem>
@@ -118,7 +118,7 @@ const Menu = ({ handleLinkClick }) => {
         </Link>
       </StyledMenuItem>
       <StyledMenuItem>
-        <Link to="#contact" onClick={e => handleLinkClick(e, '#contact')}>
+        <Link to="/#contact" onClick={e => handleLinkClick(e, '#contact')}>
           Contact
         </Link>
       </StyledMenuItem>

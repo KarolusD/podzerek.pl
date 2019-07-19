@@ -81,12 +81,16 @@ const TitleSection = ({ children, className }) => (
   </StyledWrapper>
 )
 
+TitleSection.defaultProps = {
+  className: '',
+}
+
 TitleSection.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
 }
 
 export default TitleSection

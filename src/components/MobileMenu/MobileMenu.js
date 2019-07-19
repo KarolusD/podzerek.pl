@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import Scrollspy from 'react-scrollspy'
+import { pure } from 'recompose'
 
 const StyledMobileMenu = styled(Scrollspy)`
   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
@@ -36,14 +37,10 @@ const MobileMenuItem = styled.li`
   transform: ${({ isOpen }) =>
     isOpen ? 'translateX(-50px)' : 'translateX(0)'};
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-  transition: ${({ delay, theme }) =>
-    `opacity 200ms ${delay}ms ease-out, transform 200ms ${delay}ms cubic-bezier(.51,.84,.32,1.19),
-    ${theme.themeTransition}`};
+  transition: ${({ delay }) =>
+    `transform 300ms ${delay}ms cubic-bezier(.4,.94,.41,1.3), opacity 200ms ${delay}ms ease-out`};
   margin: 8%;
   cursor: pointer;
-  ${({ theme }) => theme.mq.desktop} {
-    display: none;
-  }
 
   a {
     padding: 8px;
@@ -59,9 +56,7 @@ const MobileMenuItem = styled.li`
     ${({ theme }) => theme.mq.tablet} {
       font-size: ${({ theme }) => theme.font.size.desktop.h3};
     }
-    ${({ theme }) => theme.mq.desktop} {
-      display: none;
-    }
+
     &.active {
       :before {
         content: '';
@@ -116,7 +111,7 @@ const MobileMenu = ({ isOpen, handleLinkClick }) => {
     >
       <MobileMenuItem isOpen={isOpen} delay={isOpen ? 300 : 100}>
         <Link
-          to="#home"
+          to="/#home"
           onClick={e => handleLinkClick(e, '#home')}
           activeClassName="active"
         >
@@ -124,12 +119,12 @@ const MobileMenu = ({ isOpen, handleLinkClick }) => {
         </Link>
       </MobileMenuItem>
       <MobileMenuItem isOpen={isOpen} delay={isOpen ? 380 : 100}>
-        <Link to="#portfolio" onClick={e => handleLinkClick(e, '#portfolio')}>
+        <Link to="/#portfolio" onClick={e => handleLinkClick(e, '#portfolio')}>
           Portfolio
         </Link>
       </MobileMenuItem>
       <MobileMenuItem isOpen={isOpen} delay={isOpen ? 460 : 100}>
-        <Link to="#aboutme" onClick={e => handleLinkClick(e, '#aboutme')}>
+        <Link to="/#aboutme" onClick={e => handleLinkClick(e, '#aboutme')}>
           About me
         </Link>
       </MobileMenuItem>
@@ -139,7 +134,7 @@ const MobileMenu = ({ isOpen, handleLinkClick }) => {
         </Link>
       </MobileMenuItem>
       <MobileMenuItem isOpen={isOpen} delay={isOpen ? 620 : 100}>
-        <Link to="#contact" onClick={e => handleLinkClick(e, '#contact')}>
+        <Link to="/#contact" onClick={e => handleLinkClick(e, '#contact')}>
           Contact
         </Link>
       </MobileMenuItem>
@@ -152,4 +147,4 @@ MobileMenu.propTypes = {
   handleLinkClick: PropTypes.func.isRequired,
 }
 
-export default MobileMenu
+export default pure(MobileMenu)
