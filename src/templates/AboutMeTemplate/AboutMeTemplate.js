@@ -29,6 +29,7 @@ const StyledFlexWrapper = styled.div`
     align-content: center;
     justify-content: center;
     min-height: 100vh;
+    margin-top: 0;
   }
 `
 

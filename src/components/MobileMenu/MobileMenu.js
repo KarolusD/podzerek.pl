@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import Scrollspy from 'react-scrollspy'
-import { pure } from 'recompose'
 
 const StyledMobileMenu = styled(Scrollspy)`
   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
@@ -105,7 +104,7 @@ const MobileMenu = ({ isOpen, handleLinkClick }) => {
   return (
     <StyledMobileMenu
       isOpen={isOpen}
-      items={['home', 'portfolio', 'aboutme', 'blog', 'contact']}
+      items={['home', 'portfolio', 'aboutme', 'contact']}
       currentClassName="active"
       offset={-300}
     >
@@ -128,11 +127,11 @@ const MobileMenu = ({ isOpen, handleLinkClick }) => {
           About me
         </Link>
       </MobileMenuItem>
-      <MobileMenuItem isOpen={isOpen} delay={isOpen ? 540 : 100}>
+      {/* <MobileMenuItem isOpen={isOpen} delay={isOpen ? 540 : 100}>
         <Link to="/blog" onClick={null} activeClassName="active">
           Blog
         </Link>
-      </MobileMenuItem>
+      </MobileMenuItem> */}
       <MobileMenuItem isOpen={isOpen} delay={isOpen ? 620 : 100}>
         <Link to="/#contact" onClick={e => handleLinkClick(e, '#contact')}>
           Contact
@@ -147,4 +146,4 @@ MobileMenu.propTypes = {
   handleLinkClick: PropTypes.func.isRequired,
 }
 
-export default pure(MobileMenu)
+export default MobileMenu

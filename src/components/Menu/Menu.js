@@ -89,7 +89,7 @@ const StyledMenuItem = styled.li`
 const Menu = ({ handleLinkClick }) => {
   return (
     <StyledMenu
-      items={['home', 'portfolio', 'aboutme', 'blog', 'contact']}
+      items={['home', 'portfolio', 'aboutme', 'contact']}
       currentClassName="active"
       offset={-300}
     >
@@ -112,11 +112,11 @@ const Menu = ({ handleLinkClick }) => {
           About me
         </Link>
       </StyledMenuItem>
-      <StyledMenuItem>
+      {/* <StyledMenuItem>
         <Link to="/blog" onClick={null} activeClassName="active">
           Blog
         </Link>
-      </StyledMenuItem>
+      </StyledMenuItem> */}
       <StyledMenuItem>
         <Link to="/#contact" onClick={e => handleLinkClick(e, '#contact')}>
           Contact

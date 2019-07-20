@@ -7,8 +7,8 @@ const portfolioProjects = [
       'I designed an user interface, I connected to the cinema API, I also builded frontend of this app and created a database to store movies informations.',
     goal:
       'Create an app which is fast and user can quickly search for movies  repertoire and reserve tickets.',
-    buttonPrimary: ['see code', 'https://www.google.com'],
-    buttonSecondary: ['live preview', 'https://www.youtube.com'],
+    buttonPrimary: ['see code', 'http://www.cinemacity.site'],
+    buttonSecondary: ['live preview', 'http://www.cinemacity.site'],
     image: 'cinema-city',
   },
   {
@@ -19,8 +19,8 @@ const portfolioProjects = [
       'I designed the whole website, I also builded frontend and animations of this project.',
     goal:
       'Create a website that shows what this agency actually does, its offer and portfolio.',
-    buttonPrimary: ['see code', 'https://www.google.com'],
-    buttonSecondary: ['live preview', 'https://www.youtube.com'],
+    buttonPrimary: ['see code', 'https://www.terraweb.pl'],
+    buttonSecondary: ['live preview', 'https://www.terraweb.pl'],
     image: 'terraweb',
   },
   {
@@ -29,8 +29,8 @@ const portfolioProjects = [
     role:
       'I designed themes and interface for this site, I also builded frontend and animations.',
     goal: 'Interest the viewer, inspire someone and invite you to cooperation.',
-    buttonPrimary: ['see code', 'https://www.google.com'],
-    buttonSecondary: ['live preview', 'https://www.youtube.com'],
+    buttonPrimary: ['see code', 'https://github.com/KarolusD/podzerek.pl'],
+    buttonSecondary: ['live preview', 'https://www.podzerek.pl'],
     image: 'portfolio-dark',
   },
 ]

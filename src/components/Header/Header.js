@@ -14,7 +14,7 @@ const StyledWrapper = styled.nav`
   display: flex;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 80px;
   background: ${({ theme }) => theme.bg};
   justify-content: space-between;
