@@ -6,11 +6,13 @@ import PropTypes from 'prop-types'
 
 const activeNavItemKeyframes = keyframes`
   0% {
-    transform: scaleX(0);
+    opacity: 0;
+    transform: translateX(-30px);
     transform-origin: center left;
   }
   100% {
-    transform: scaleX(1);
+    opacity: 1;
+    transform: translateX(0);
   }
 `
 
@@ -91,7 +93,7 @@ const Menu = ({ handleLinkClick }) => {
     <StyledMenu
       items={['home', 'portfolio', 'aboutme', 'contact']}
       currentClassName="active"
-      offset={-300}
+      offset={-600}
     >
       <StyledMenuItem>
         <Link

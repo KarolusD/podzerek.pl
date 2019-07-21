@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Section from 'components/Section/Section'
 import TitleSection from 'components/TitleSection/TitleSection'
 import { H3, H4, P } from 'components/Typography/Typography'
@@ -6,6 +7,7 @@ import styled from 'styled-components'
 import Button from 'components/Button/Button'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Circle from 'components/Circle/Circle'
 import portfolioProjects from '../../portfolioProjects/portfolioProjects'
 
 const StyledSection = styled.div`
@@ -124,7 +126,27 @@ const StyledP = styled(P)`
   }
 `
 
-const PortfolioTemplate = () => {
+const StyledLightCircle = styled(Circle)`
+  background: ${({ theme, isLight }) =>
+    isLight
+      ? `radial-gradient(circle at 30% 30%, ${theme.themeGradient})`
+      : `none`} !important;
+  opacity: ${({ isLight }) => (isLight ? '1' : '0')};
+  transition: opacity 400ms 300ms ease-out;
+  /* z-index: -1; */
+`
+
+const StyledDarkCircle = styled(Circle)`
+  background: ${({ isLight, theme }) =>
+    !isLight
+      ? `radial-gradient(circle at 30% 30%, ${theme.themeGradient})`
+      : `none`} !important;
+  opacity: ${({ isLight }) => (isLight ? '0' : '1')};
+  transition: opacity 400ms 300ms ease-out;
+  /* z-index: -1; */
+`
+
+const PortfolioTemplate = ({ isLight }) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -148,11 +170,51 @@ const PortfolioTemplate = () => {
     }
   `)
 
+  const getRandomInt = (min, max) => {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
   const { edges } = data.allFile
 
   const portfolioPosts = portfolioProjects.map((project, index) => (
     <StyledSection key={project.title}>
       <StyledTitleSection index={index}>My recent projects</StyledTitleSection>
+
+      <StyledLightCircle
+        isLight={isLight}
+        top={`${getRandomInt(30 * index + 1, 30 * index + 30)}%`}
+        left={`${getRandomInt(5, 15)}%`}
+        radius={`${getRandomInt(16, 32)}`}
+      />
+      <StyledDarkCircle
+        isLight={isLight}
+        top={`${getRandomInt(30 * index + 1, 30 * index + 30)}%`}
+        left={`${getRandomInt(5, 15)}%`}
+        radius={`${getRandomInt(16, 32)}`}
+      />
+
+      <StyledLightCircle
+        isLight={isLight}
+        top={`${getRandomInt(40 * index + 1, 40 * index + 40)}%`}
+        left={`${getRandomInt(80, 90)}%`}
+        radius={`${getRandomInt(16, 32)}`}
+      />
+      <StyledDarkCircle
+        isLight={isLight}
+        top={`${getRandomInt(40 * index + 1, 40 * index + 40)}%`}
+        left={`${getRandomInt(80, 90)}%`}
+        radius={`${getRandomInt(16, 32)}`}
+      />
+
+      {/* <Circle
+        isLight={isLight}
+        top={`${getRandomInt(30 * index + 1, 30 * index + 30)}%`}
+        left={`${getRandomInt(80, 90)}%`}
+        radius={`${getRandomInt(12, 32)}`}
+      /> */}
+
       <StyledWrapper>
         <StyledFlexItem>
           <StyledH3>{project.title}</StyledH3>
@@ -161,12 +223,12 @@ const PortfolioTemplate = () => {
           <StyledP>{project.role}</StyledP>
           <StyledH4>Goal</StyledH4>
           <StyledP>{project.goal}</StyledP>
-          <StyledLink href={project.buttonPrimary[1]}>
+          <StyledLink target="_blank" href={project.buttonPrimary[1]}>
             <StyledButton primary type="button">
               {project.buttonPrimary[0]}
             </StyledButton>
           </StyledLink>
-          <StyledLink href={project.buttonSecondary[1]}>
+          <StyledLink target="_blank" href={project.buttonSecondary[1]}>
             <StyledButton type="button">
               {project.buttonSecondary[0]}
             </StyledButton>
@@ -189,6 +251,14 @@ const PortfolioTemplate = () => {
   ))
 
   return <Section id="portfolio">{portfolioPosts}</Section>
+}
+
+PortfolioTemplate.defaultProps = {
+  isLight: true,
+}
+
+PortfolioTemplate.propTypes = {
+  isLight: PropTypes.bool,
 }
 
 export default PortfolioTemplate

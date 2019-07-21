@@ -146,15 +146,11 @@ const AboutMeTemplate = () => {
           <StyledQuoteLeft src={quoteLeft} />
           <StyledH3>Hello, I&apos;m Charles</StyledH3>
           <StyledP>
-            Aliquip irure ipsum reprehenderit enim qui fugiat ad eiusmod
-            officia. Consectetur fugiat nostrud in ipsum reprehenderit amet
-            irure reprehenderit id ex tempor nostrud voluptate. Sit enim aliquip
-            esse incididunt nostrud irure nulla duis aute quis. Sunt incididunt
-            esse minim laborum quis fugiat Lorem et est. Eu enim tempor aliqua
-            magna. Ex non non anim aliquip deserunt amet amet minim nulla
-            voluptate dolor duis Lorem ad. Excepteur velit deserunt exercitation
-            aliquip irure fugiat non ad irure do. Consectetur in duis do eiusmod
-            sint do sint
+            I specialise in creating user interfaces. I care about usablity,
+            simplicity and whole look of websites or apps. I have expierience as
+            a designer and front-end freelancer. Currently I am working as a UI
+            designer in financial solutions. If you are interested in working
+            together, please contact me. Anyway you are welcome!
           </StyledP>
           <StyledQuoteRight src={quoteRight} />
         </StyledFlexItem>

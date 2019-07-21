@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     overflow-x: hidden;
   }
+
+  #___gatsby {
+    overflow-x: hidden;
+  }
 `
 
 export default GlobalStyle

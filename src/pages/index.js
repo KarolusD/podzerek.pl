@@ -3,8 +3,8 @@ import React from 'react'
 import MainTemplate from 'templates/MainTemplate/MainTemplate'
 import HeroTemplate from 'templates/HeroTemplate/HeroTemplate'
 import PortfolioTemplate from 'templates/PortfolioTemplate/PortfolioTemplate'
-import AboutMeTemplate from '../templates/AboutMeTemplate/AboutMeTemplate'
-import ContactTemplate from '../templates/ContactTemplate/ContactTemplate'
+import AboutMeTemplate from 'templates/AboutMeTemplate/AboutMeTemplate'
+import FooterTemplate from 'templates/FooterTemplate/FooterTemplate'
 
 // const StyledHeading = styled.h1`
 //   font-size: 40px;
@@ -19,7 +19,7 @@ const IndexPage = () => (
     <HeroTemplate />
     <PortfolioTemplate />
     <AboutMeTemplate />
-    <ContactTemplate />
+    <FooterTemplate />
   </MainTemplate>
 )
 

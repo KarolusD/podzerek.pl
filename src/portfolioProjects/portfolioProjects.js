@@ -2,12 +2,12 @@ const portfolioProjects = [
   {
     title: 'Cinema city app',
     description:
-      'My and friend of mine were thinking about quicker way to search movies showtimes in our city cinema. We’ve come up with an idea to build an app which provides movies showtimes and links to reservation page on the official cinema city site.',
+      'My and friend of mine were thinking about quicker way to search movies showtimes in our city cinema. We’ve come up with an idea to build an app which provides movies showtimes and links to reservation page on the official Cinema City site.',
     role:
       'I designed an user interface, I connected to the cinema API, I also builded frontend of this app and created a database to store movies informations.',
     goal:
       'Create an app which is fast and user can quickly search for movies  repertoire and reserve tickets.',
-    buttonPrimary: ['see code', 'http://www.cinemacity.site'],
+    buttonPrimary: ['see code', 'https://github.com/KarolusD/cinema-city-app'],
     buttonSecondary: ['live preview', 'http://www.cinemacity.site'],
     image: 'cinema-city',
   },
@@ -19,7 +19,7 @@ const portfolioProjects = [
       'I designed the whole website, I also builded frontend and animations of this project.',
     goal:
       'Create a website that shows what this agency actually does, its offer and portfolio.',
-    buttonPrimary: ['see code', 'https://www.terraweb.pl'],
+    buttonPrimary: ['see code', 'https://github.com/KarolusD/terraweb-site'],
     buttonSecondary: ['live preview', 'https://www.terraweb.pl'],
     image: 'terraweb',
   },

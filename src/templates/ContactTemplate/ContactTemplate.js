@@ -7,6 +7,7 @@ import Button from 'components/Button/Button'
 import { P } from 'components/Typography/Typography'
 import { withFormik, Form, Field } from 'formik'
 import * as Yup from 'yup'
+import { pure } from 'recompose'
 
 const encode = data => {
   return Object.keys(data)
@@ -160,19 +161,24 @@ const ErrorMessage = styled(P)`
 const StatusMessage = styled(P)`
   display: block;
   position: absolute;
-  bottom: 20%;
   left: 50%;
+  bottom: -48px;
+  text-align: center;
   transform: translateX(-50%);
   color: ${({ theme, sent }) => (sent ? theme.brand3 : theme.brand)};
   font-family: ${({ theme }) => theme.font.family.poppins};
   font-weight: ${({ theme }) => theme.font.weight.regular};
   font-size: ${({ theme }) => theme.font.size.mobile.body};
+
+  ${({ theme }) => theme.desktop} {
+    bottom: 18%;
+  }
 `
 
 const StyledH3 = styled.h3`
-  position: relative;
-  left: 12.5vw;
-  top: 64px;
+  position: absolute;
+  left: 12.5vw !important;
+  top: 88px !important;
   font-family: ${({ theme }) => theme.font.family.poppins};
   font-size: ${({ theme }) => theme.font.size.mobile.h3};
   font-weight: ${({ theme }) => theme.font.weight.extrabold};
@@ -180,13 +186,13 @@ const StyledH3 = styled.h3`
   transition: color ${({ theme }) => theme.themeTransition};
 
   ${({ theme }) => theme.mq.desktop} {
-    top: 20vh;
+    top: 16vh !important;
     font-size: ${({ theme }) => theme.font.size.desktop.h3};
   }
 
   ${({ theme }) => theme.mq.huge} {
     font-size: calc(${({ theme }) => theme.font.size.mobile.h3} * 1.4);
-    left: 25vw;
+    left: 25vw !important;
   }
 `
 
@@ -367,4 +373,4 @@ const ContactTemplate = () => (
   </StyledSection>
 )
 
-export default ContactTemplate
+export default pure(ContactTemplate)
