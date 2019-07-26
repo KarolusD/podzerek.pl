@@ -2,11 +2,11 @@ const portfolioProjects = [
   {
     title: 'Cinema city app',
     description:
-      'Me and friend of mine were thinking about quicker way to search movies showtimes in our city cinema. We’ve come up with an idea to build an app which provides movies showtimes and links to reservation page on the official Cinema City site.',
+      'Me and a friend of mine were thinking about a faster way to search though the schedule in our cities cinema. We’ve come up with an idea to build an app which provides movies showtimes and links to the reservation page on the official Cinema City site.',
     role:
-      'I designed an user interface, I connected to the cinema API, I also builded frontend of this app and created a database to store movies informations.',
+      'I designed the user interface, connected to the Cinema City API, and built the frontend of this app as well as designed a database to cache scheduled movies.',
     goal:
-      'Create an app which is fast and user can quickly search for movies  repertoire and reserve tickets.',
+      'I designed the whole website, I also built the frontend and animations of this project.',
     buttonPrimary: ['see code', 'https://github.com/KarolusD/cinema-city-app'],
     buttonSecondary: ['live preview', 'http://www.cinemacity.site'],
     image: 'cinema-city',
@@ -27,7 +27,7 @@ const portfolioProjects = [
     title: 'My portfolio website',
     description: `I always wanted to show my UI skills with frontend knowleadge in a pleasent way. So it's not only my portfolio, but also my personal project. Enjoy it.`,
     role:
-      'I designed themes and interface for this site, I also builded frontend and animations.',
+      'I designed the themes and interface for this site, I also built frontend and animations.',
     goal: 'Interest the viewer, inspire someone and invite you to cooperation.',
     buttonPrimary: ['see code', 'https://github.com/KarolusD/podzerek.pl'],
     buttonSecondary: ['live preview', 'https://www.podzerek.pl'],

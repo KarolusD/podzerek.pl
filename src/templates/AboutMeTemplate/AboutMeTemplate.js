@@ -147,10 +147,11 @@ const AboutMeTemplate = () => {
           <StyledH3>Hello, I&apos;m Charles</StyledH3>
           <StyledP>
             I specialise in creating user interfaces. I care about usablity,
-            simplicity and whole look of websites or apps. I have expierience as
-            a designer and front-end freelancer. Currently I am working as a UI
-            designer in financial solutions. If you are interested in working
-            together, please contact me. Anyway you are welcome!
+            simplicity and the general look and feel of websites and apps. I
+            have experience as a designer and front-end freelancer. Currently I
+            am working as an UI designer in financial solutions. If you are
+            interested in working together, please contact me, and even if not,
+            thank you for stopping by!
           </StyledP>
           <StyledQuoteRight src={quoteRight} />
         </StyledFlexItem>
