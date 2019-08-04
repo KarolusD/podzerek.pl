@@ -27,7 +27,7 @@ const portfolioProjects = [
     title: 'My portfolio website',
     description: `I always wanted to show my UI skills with frontend knowleadge in a pleasent way. So it's not only my portfolio, but also my personal project. Enjoy it.`,
     role:
-      'I designed themes and interface for this site, I also builded frontend and animations.',
+      'I designed themes and interface for this site, I also built frontend and animations.',
     goal: 'Interest the viewer, inspire someone and invite you to cooperation.',
     buttonPrimary: ['see code', 'https://github.com/KarolusD/podzerek.pl'],
     buttonSecondary: ['live preview', 'https://www.podzerek.pl'],
