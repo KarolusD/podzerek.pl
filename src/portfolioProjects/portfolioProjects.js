@@ -2,7 +2,7 @@ const portfolioProjects = [
   {
     title: 'Cinema city app',
     description:
-      'Me and a friend of mine were thinking about a faster way to search though the schedule in our cities cinema. We’ve come up with an idea to build an app which provides movies showtimes and links to the reservation page on the official Cinema City site.',
+      'Me and a friend of mine were thinking about a faster way to search through the schedule in our cities cinema. We’ve come up with an idea to build an app which provides movies showtimes and links to the reservation page on the official Cinema City site.',
     role:
       'I designed the user interface, connected to the Cinema City API, and built the frontend of this app as well as designed a database to cache scheduled movies.',
     goal:
