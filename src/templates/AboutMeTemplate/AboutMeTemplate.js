@@ -1,13 +1,12 @@
 import React from 'react'
 import Section from 'components/Section/Section'
 import { H3, P } from 'components/Typography/Typography'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import styled from 'styled-components'
 import Icon from 'components/Icon/Icon'
 import quoteLeft from 'assets/images/quoteLeft.svg'
 import quoteRight from 'assets/images/quoteRight.svg'
 import TitleSection from 'components/TitleSection/TitleSection'
+import Image from 'components/Image/Image'
 
 const StyledSection = styled(Section)`
   ${({ theme }) => theme.mq.desktop} {
@@ -47,7 +46,7 @@ const StyledFlexItem = styled.div`
   }
 `
 
-const StyledImage = styled(Img)`
+const StyledImage = styled(Image)`
   position: relative;
   display: block;
   object-fit: contain;
@@ -58,13 +57,6 @@ const StyledImage = styled(Img)`
   margin: 0;
   padding: 0;
   margin-top: 64px;
-
-  img {
-    object-fit: contain !important;
-    width: 100% !important;
-    height: auto !important;
-    object-position: center center !important;
-  }
 
   ${({ theme }) => theme.mq.desktop} {
     margin-top: 0;
@@ -124,20 +116,6 @@ const StyledP = styled(P)`
 `
 
 const AboutMeTemplate = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "assets/images/profile.png" }) {
-        relativePath
-        name
-        childImageSharp {
-          fluid(maxWidth: 750, quality: 95) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <StyledSection id="aboutme">
       <TitleSection>Get to know me</TitleSection>
@@ -156,7 +134,7 @@ const AboutMeTemplate = () => {
           <StyledQuoteRight src={quoteRight} />
         </StyledFlexItem>
         <StyledFlexItem>
-          <StyledImage fluid={data.file.childImageSharp.fluid} />
+          <StyledImage alt="just me" filename="profile.png" />
         </StyledFlexItem>
       </StyledFlexWrapper>
     </StyledSection>
