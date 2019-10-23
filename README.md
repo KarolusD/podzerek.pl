@@ -22,12 +22,12 @@ This should be installed on your computer in order to get up and running:
 
 ## Built With
 
-* GATSBY JS
-* React JS
-* GraphQL
-* Styled-components
-* ESLINT/PRETTIER
+- GATSBY JS
+- React JS
+- GraphQL
+- Styled-components
+- ESLINT/PRETTIER
 
 ## Authors
 
-* **Karol Podżerek** 
+- **Karol Podżerek**
