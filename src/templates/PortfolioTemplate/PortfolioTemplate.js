@@ -30,6 +30,7 @@ const StyledWrapper = styled.div`
   width: 100vw;
   height: 100%;
   padding: 80px 12.5vw;
+  min-height: 700px;
 
   ${({ theme }) => theme.mq.desktop} {
     flex-direction: row-reverse;
@@ -83,7 +84,9 @@ const StyledImage = styled(Img)`
 `
 
 const StyledFlexItem = styled.div`
+  z-index: 1;
   width: 100%;
+
   ${({ theme }) => theme.mq.desktop} {
     width: 50%;
     max-width: 600px;
@@ -170,50 +173,26 @@ const PortfolioTemplate = ({ isLight }) => {
     }
   `)
 
-  const getRandomInt = (min, max) => {
-    min = Math.ceil(min)
-    max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min + 1)) + min
-  }
-
   const { edges } = data.allFile
 
   const portfolioPosts = portfolioProjects.map((project, index) => (
     <StyledSection key={project.title}>
       <StyledTitleSection index={index}>My recent projects</StyledTitleSection>
 
-      <StyledLightCircle
-        isLight={isLight}
-        top={`${getRandomInt(30 * index + 1, 30 * index + 30)}%`}
-        left={`${getRandomInt(5, 15)}%`}
-        radius={`${getRandomInt(16, 32)}`}
-      />
-      <StyledDarkCircle
-        isLight={isLight}
-        top={`${getRandomInt(30 * index + 1, 30 * index + 30)}%`}
-        left={`${getRandomInt(5, 15)}%`}
-        radius={`${getRandomInt(16, 32)}`}
-      />
+      <StyledLightCircle isLight={isLight} top="25%" left="80%" radius="48" />
+      <StyledDarkCircle isLight={isLight} top="25%" left="80%" radius="48" />
 
-      <StyledLightCircle
-        isLight={isLight}
-        top={`${getRandomInt(40 * index + 1, 40 * index + 40)}%`}
-        left={`${getRandomInt(80, 90)}%`}
-        radius={`${getRandomInt(16, 32)}`}
-      />
-      <StyledDarkCircle
-        isLight={isLight}
-        top={`${getRandomInt(40 * index + 1, 40 * index + 40)}%`}
-        left={`${getRandomInt(80, 90)}%`}
-        radius={`${getRandomInt(16, 32)}`}
-      />
+      <StyledLightCircle isLight={isLight} top="35%" left="5%" radius="24" />
+      <StyledDarkCircle isLight={isLight} top="35%" left="5%" radius="24" />
 
-      {/* <Circle
-        isLight={isLight}
-        top={`${getRandomInt(30 * index + 1, 30 * index + 30)}%`}
-        left={`${getRandomInt(80, 90)}%`}
-        radius={`${getRandomInt(12, 32)}`}
-      /> */}
+      <StyledLightCircle isLight={isLight} top="55%" left="35%" radius="32" />
+      <StyledDarkCircle isLight={isLight} top="55%" left="35%" radius="32" />
+
+      <StyledLightCircle isLight={isLight} top="75%" left="75%" radius="40" />
+      <StyledDarkCircle isLight={isLight} top="75%" left="75%" radius="40" />
+
+      <StyledLightCircle isLight={isLight} top="100%" left="15%" radius="24" />
+      <StyledDarkCircle isLight={isLight} top="100%" left="15%" radius="24" />
 
       <StyledWrapper>
         <StyledFlexItem>

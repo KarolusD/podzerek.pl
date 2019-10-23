@@ -202,8 +202,9 @@ const HeroTemplate = ({ isLight }) => (
     />
     <HeroH2>Hello there, I am</HeroH2>
     <HeroH1>
-      Frontend developer<StyledSemicolon src={semicolon}>;</StyledSemicolon>{' '}
-      <br />& UI Designer
+      UI Designer &
+      <br />
+      Frontend developer<StyledSemicolon src={semicolon}>;</StyledSemicolon>
     </HeroH1>
     <CTA
       onClick={e => {

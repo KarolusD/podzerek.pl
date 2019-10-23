@@ -1,5 +1,17 @@
 const portfolioProjects = [
   {
+    title: 'Fitness blog',
+    description:
+      'Personal trainer blog website dedicated for people who want to learn more about healthy eating and proper training.',
+    role:
+      'I designed the brand and the user interface, also connected to the headless CMS and deploy on Netlify.',
+    goal:
+      'Build a website which create a network of users and clients who are interested in diet or workout.',
+    buttonPrimary: ['see code', 'https://github.com/KarolusD/fitness-blog'],
+    buttonSecondary: ['live preview', 'https://www.klaudiawolinska.pl/'],
+    image: 'kw-dieta',
+  },
+  {
     title: 'Cinema city app',
     description:
       'Me and a friend of mine were thinking about a faster way to search through the schedule in our cities cinema. We’ve come up with an idea to build an app which provides movies showtimes and links to the reservation page on the official Cinema City site.',
