@@ -202,16 +202,20 @@ const PortfolioTemplate = ({ isLight }) => {
           <StyledP>{project.role}</StyledP>
           <StyledH4>Goal</StyledH4>
           <StyledP>{project.goal}</StyledP>
-          <StyledLink target="_blank" href={project.buttonPrimary[1]}>
-            <StyledButton primary type="button">
-              {project.buttonPrimary[0]}
-            </StyledButton>
-          </StyledLink>
-          <StyledLink target="_blank" href={project.buttonSecondary[1]}>
-            <StyledButton type="button">
-              {project.buttonSecondary[0]}
-            </StyledButton>
-          </StyledLink>
+          {project.buttonPrimary && (
+            <StyledLink target="_blank" href={project.buttonPrimary[1]}>
+              <StyledButton primary type="button">
+                {project.buttonPrimary[0]}
+              </StyledButton>
+            </StyledLink>
+          )}
+          {project.buttonSecondary && (
+            <StyledLink target="_blank" href={project.buttonSecondary[1]}>
+              <StyledButton type="button">
+                {project.buttonSecondary[0]}
+              </StyledButton>
+            </StyledLink>
+          )}
         </StyledFlexItem>
         <StyledFlexItem>
           {edges.map(item => {
