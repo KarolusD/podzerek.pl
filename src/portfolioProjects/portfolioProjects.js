@@ -12,6 +12,18 @@ const portfolioProjects = [
     image: 'kw-dieta',
   },
   {
+    title: 'Pomodoro timer',
+    description:
+      'Simple timer app which use well known Pomodoro technique to focus more on your daily goal and improve your productivity.',
+    role:
+      'I designed and implemented the user interface and logic with ReactJS and deploy it to Netlify platform.',
+    goal:
+      'Build an app which can be easily extended with more functionalities in the future',
+    buttonPrimary: ['see code', 'https://github.com/KarolusD/pomo-timer'],
+    buttonSecondary: ['live preview', 'https://www.pomofocus.it/'],
+    image: 'pomo-timer',
+  },
+  {
     title: 'Cinema city app',
     description:
       'Me and a friend of mine were thinking about a faster way to search through the schedule in our cities cinema. We’ve come up with an idea to build an app which provides movies showtimes and links to the reservation page on the official Cinema City site.',
@@ -20,7 +32,6 @@ const portfolioProjects = [
     goal:
       'Create an app which is fast and user can quickly search for movies  repertoire and reserve tickets.',
     buttonPrimary: ['see code', 'https://github.com/KarolusD/cinema-city-app'],
-    buttonSecondary: ['live preview', 'http://www.cinemacity.site'],
     image: 'cinema-city',
   },
   {
@@ -32,18 +43,7 @@ const portfolioProjects = [
     goal:
       'Create a website that shows what this agency actually does, its offer and portfolio.',
     buttonPrimary: ['see code', 'https://github.com/KarolusD/terraweb-site'],
-    buttonSecondary: ['live preview', 'https://www.terraweb.pl'],
     image: 'terraweb',
-  },
-  {
-    title: 'My portfolio website',
-    description: `I always wanted to show my UI skills with frontend knowleadge in a pleasent way. So it's not only my portfolio, but also my personal project. Enjoy it.`,
-    role:
-      'I designed themes and interface for this site, I also built frontend and animations.',
-    goal: 'Interest the viewer, inspire someone and invite you to cooperation.',
-    buttonPrimary: ['see code', 'https://github.com/KarolusD/podzerek.pl'],
-    buttonSecondary: ['live preview', 'https://www.podzerek.pl'],
-    image: 'portfolio-dark',
   },
 ]
 
