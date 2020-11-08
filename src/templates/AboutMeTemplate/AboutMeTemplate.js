@@ -127,7 +127,7 @@ const AboutMeTemplate = () => {
             I specialise in creating user interfaces. I care about usablity,
             simplicity and the general look and feel of websites and apps. I
             have experience as a designer and front-end freelancer. Currently I
-            am working as an UI designer in financial solutions. If you are
+            am working as an UI designer in a software house. If you are
             interested in working together, please contact me, and even if not,
             thank you for stopping by!
           </StyledP>
